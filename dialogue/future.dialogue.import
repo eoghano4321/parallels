@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bf6ikwdc2ewv8"
+path="res://.godot/imported/future.dialogue-96d068be5130d5b45c9630b1d565968e.tres"
+
+[deps]
+
+source_file="res://dialogue/future.dialogue"
+dest_files=["res://.godot/imported/future.dialogue-96d068be5130d5b45c9630b1d565968e.tres"]
+
+[params]
+
+defaults=true

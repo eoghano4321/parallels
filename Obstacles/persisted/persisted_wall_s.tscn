@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://kccta41y87tg"]
+
+[ext_resource type="PackedScene" uid="uid://hvmo1fyo0lu1" path="res://Art/OldWallSmall.gltf" id="1_6ketn"]
+[ext_resource type="PackedScene" uid="uid://1o7tc30sxr33" path="res://Art/NewWallMed.gltf" id="2_rtn85"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f468"]
+size = Vector3(4, 2.00586, 0.196045)
+
+[node name="PersistedWall_s" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Old" parent="." instance=ExtResource("1_6ketn")]
+
+[node name="New" parent="." instance=ExtResource("2_rtn85")]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00739, 0.999023, -0.0831299)
+shape = SubResource("BoxShape3D_7f468")

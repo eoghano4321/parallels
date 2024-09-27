@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b30eec5oxs4qc"]
+
+[ext_resource type="PackedScene" uid="uid://03aab6fys5up" path="res://Art/CrumblingWall.gltf" id="1_yupg4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uyaec"]
+size = Vector3(4, 2.00537, 0.246246)
+
+[node name="CrumbleWall" type="StaticBody3D"]
+
+[node name="default" parent="." instance=ExtResource("1_yupg4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.998291, -0.0703278)
+shape = SubResource("BoxShape3D_uyaec")

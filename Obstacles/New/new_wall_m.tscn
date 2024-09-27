@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://capbu8i8lxa0m"]
+
+[ext_resource type="PackedScene" uid="uid://1o7tc30sxr33" path="res://Art/NewWallMed.gltf" id="1_enuva"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f468"]
+size = Vector3(4, 2, 0.196045)
+
+[node name="NewWall_m" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="default" parent="." instance=ExtResource("1_enuva")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00739, 0.996094, -0.0831299)
+shape = SubResource("BoxShape3D_7f468")

@@ -1,0 +1,12 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://dwy7kj623c08o"]
+
+[sub_resource type="Sky" id="Sky_qjdlh"]
+
+[resource]
+background_mode = 1
+background_color = Color(0.787198, 0.858644, 1, 1)
+sky = SubResource("Sky_qjdlh")
+ambient_light_color = Color(0.851769, 0.851769, 0.851769, 1)
+ambient_light_energy = 0.17
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03

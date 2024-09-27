@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwipdeufmwcsq"]
+
+[ext_resource type="Script" path="res://dialogue/dialogue_trigger.gd" id="1_ed8qw"]
+
+[node name="DialogueTrigger" type="Area3D" groups=["dialogue"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ed8qw")
+
+[connection signal="body_entered" from="." to="." method="triggerDialogue"]

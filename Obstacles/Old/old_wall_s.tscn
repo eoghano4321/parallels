@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf7jr64gsg22g"]
+
+[ext_resource type="PackedScene" uid="uid://hvmo1fyo0lu1" path="res://Art/OldWallSmall.gltf" id="1_2qblh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f468"]
+size = Vector3(4, 2, 0.196045)
+
+[node name="OldWall_s" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00739, 0.996094, -0.0831299)
+shape = SubResource("BoxShape3D_7f468")
+
+[node name="default" parent="." instance=ExtResource("1_2qblh")]
