@@ -23,3 +23,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.916513, -0.209216)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 environment = ExtResource("2_m1iub")
 current = true
+
+[node name="Coyote" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Coyote" to="." method="_on_coyote_timeout"]

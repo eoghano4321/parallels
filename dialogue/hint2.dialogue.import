@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c4yxovbk0n8xv"
+path="res://.godot/imported/hint2.dialogue-3d6c267c93520894694bd6c170f093da.tres"
+
+[deps]
+
+source_file="res://dialogue/hint2.dialogue"
+dest_files=["res://.godot/imported/hint2.dialogue-3d6c267c93520894694bd6c170f093da.tres"]
+
+[params]
+
+defaults=true

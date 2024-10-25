@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bv0yw63hpv41w"]
+[gd_scene load_steps=22 format=3 uid="uid://bv0yw63hpv41w"]
 
 [ext_resource type="Script" path="res://dimensionswitch.gd" id="1_cnb88"]
 [ext_resource type="Resource" uid="uid://bmx3640l3is5r" path="res://dialogue/hint.dialogue" id="2_2f5wb"]
@@ -16,15 +16,27 @@
 [ext_resource type="PackedScene" uid="uid://dwipdeufmwcsq" path="res://dialogue/dialogue_trigger.tscn" id="11_wj1kr"]
 [ext_resource type="Resource" uid="uid://s5ntat5auknh" path="res://dialogue/main.dialogue" id="12_1tenc"]
 [ext_resource type="Resource" uid="uid://bf6ikwdc2ewv8" path="res://dialogue/future.dialogue" id="12_1vgtd"]
+[ext_resource type="PackedScene" uid="uid://de4ihqj00672d" path="res://Menus/pause.tscn" id="17_m6qcj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxwtu"]
+size = Vector3(14, 21.2863, 5.19725)
+
+[sub_resource type="FogMaterial" id="FogMaterial_fje56"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8enc2"]
 radius = 2.0
 
-[node name="World" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_25v2g"]
+size = Vector3(6.56586, 4.8194, 6.1391)
+
+[node name="Level1" type="Node3D"]
+process_mode = 3
 script = ExtResource("1_cnb88")
 hintDialogue = ExtResource("2_2f5wb")
+nextLevel = "res://world.tscn"
 
 [node name="OldDimension" type="Node3D" parent="."]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -16)
 
 [node name="OldWall_b" parent="OldDimension" instance=ExtResource("2_7i5l2")]
@@ -37,6 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 40)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97799, -1, 34.0289)
 
 [node name="NewDimension" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="NewBlock3" parent="NewDimension" instance=ExtResource("3_n4yv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96262, 0.0296633, 3.9477)
@@ -108,25 +121,40 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.7573
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97799, 0, 18.0289)
 
 [node name="NewWall_m" parent="NewDimension" instance=ExtResource("8_qm2p6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35805, 2.00588, 0.166566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35805, 1.78484, 0.166566)
 
 [node name="NewWall_m2" parent="NewDimension" instance=ExtResource("8_qm2p6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.35805, 2.00588, 0.166566)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.35805, 1.78484, 0.166566)
 
 [node name="PersistedObjects" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="PersistedWall_s" parent="PersistedObjects" instance=ExtResource("4_bosf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35805, 0.00588262, 0.166566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35805, -0.215154, 0.166566)
 
 [node name="PersistedWall_s2" parent="PersistedObjects" instance=ExtResource("4_bosf6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.35805, 0.00588262, 0.166566)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.35805, -0.215154, 0.166566)
 
 [node name="Level1" parent="PersistedObjects" instance=ExtResource("6_od16k")]
 
+[node name="Level2" parent="PersistedObjects" instance=ExtResource("6_od16k")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0, -16)
+
+[node name="BackWall2" parent="PersistedObjects/Level2" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17578, 2.89994, -6.51431)
+shape = SubResource("BoxShape3D_dxwtu")
+
+[node name="FogVolume" type="FogVolume" parent="PersistedObjects/Level2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.04228, 7.49013, 0.628407)
+size = Vector3(12.5706, 10.5475, 16.5034)
+material = SubResource("FogMaterial_fje56")
+
 [node name="Player" parent="." instance=ExtResource("2_e34xh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1066, 1.67481, 32.6627)
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1066, 1.67481, 30.5019)
 
 [node name="Pickups" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="Pickup" parent="Pickups" instance=ExtResource("3_56o4v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6481, 2.61421, 15.9692)
@@ -145,6 +173,7 @@ Dialogue = ExtResource("12_1vgtd")
 transform = Transform3D(1, 0, 0, 0, -0.117572, 0.993064, 0, -0.993064, -0.117572, 0, 31.2664, 13.0736)
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("11_wj1kr")]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 29.5)
 Dialogue = ExtResource("12_1tenc")
 
@@ -153,8 +182,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("SphereShape3D_8enc2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+process_mode = 1
+wait_time = 180.0
 one_shot = true
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("17_m6qcj")]
+process_mode = 3
+visible = false
+
+[node name="LevelEnd" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44769, 4.42047, -8.2713)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0626526, 1.43906, 0.0904846)
+shape = SubResource("BoxShape3D_25v2g")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Pause/Resume" to="." method="unpause"]
+[connection signal="pressed" from="CanvasLayer/Pause/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Quit" to="." method="_on_quit_pressed"]
+[connection signal="body_entered" from="LevelEnd" to="." method="_on_level_end_body_entered"]
+
+[editable path="PersistedObjects/Level2"]
+[editable path="CanvasLayer/Pause"]

@@ -1,0 +1,205 @@
+[gd_scene load_steps=18 format=3 uid="uid://d2nt7y7mbxwjp"]
+
+[ext_resource type="Script" path="res://dimensionswitch.gd" id="1_extlg"]
+[ext_resource type="Resource" uid="uid://c4yxovbk0n8xv" path="res://dialogue/hint2.dialogue" id="2_kqxbj"]
+[ext_resource type="PackedScene" uid="uid://bouhhb1mwyila" path="res://Obstacles/Old/old_wall_b.tscn" id="3_fd4ce"]
+[ext_resource type="PackedScene" uid="uid://bf7jr64gsg22g" path="res://Obstacles/Old/old_wall_s.tscn" id="4_uveau"]
+[ext_resource type="PackedScene" uid="uid://b30eec5oxs4qc" path="res://Obstacles/Old/crumble_wall.tscn" id="5_pd6vm"]
+[ext_resource type="PackedScene" uid="uid://dyhyc2yuixhkx" path="res://Obstacles/Blocks/old_block_3.tscn" id="5_vnqi4"]
+[ext_resource type="PackedScene" uid="uid://du46w8vyayjbi" path="res://Obstacles/New/new_wall_s_t.tscn" id="7_mu35u"]
+[ext_resource type="PackedScene" uid="uid://b8y24p1secer4" path="res://Obstacles/Old/old_wall_s_t.tscn" id="7_p2hpa"]
+[ext_resource type="PackedScene" uid="uid://b27cp3ok1b7ie" path="res://Obstacles/New/new_wall_b.tscn" id="8_idn2x"]
+[ext_resource type="PackedScene" uid="uid://mmqtx236ii6j" path="res://level_1.tscn" id="11_g7236"]
+[ext_resource type="PackedScene" uid="uid://bhv8y7ecn4w7w" path="res://player.tscn" id="12_dpl26"]
+[ext_resource type="PackedScene" uid="uid://cnpgllcl4bpy4" path="res://pickup.tscn" id="13_no7lf"]
+[ext_resource type="PackedScene" uid="uid://dn71q0msy604v" path="res://Obstacles/Old/old_wall_b_t.tscn" id="13_pyl5s"]
+[ext_resource type="PackedScene" uid="uid://de4ihqj00672d" path="res://Menus/pause.tscn" id="17_4vv1w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxwtu"]
+size = Vector3(14, 21.2863, 5.19725)
+
+[sub_resource type="FogMaterial" id="FogMaterial_fje56"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25v2g"]
+size = Vector3(6.56586, 4.8194, 6.1391)
+
+[node name="Level3" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_extlg")
+hintDialogue = ExtResource("2_kqxbj")
+nextLevel = "res://Levels/Level4.tscn"
+
+[node name="OldDimension" type="Node3D" parent="."]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -16)
+
+[node name="OldWall_b" parent="OldDimension" instance=ExtResource("3_fd4ce")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.02237, -0.999272, 39.9833)
+
+[node name="OldWall_s" parent="OldDimension" instance=ExtResource("4_uveau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 40)
+
+[node name="OldBlock3" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 26)
+
+[node name="OldBlock10" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 26)
+
+[node name="OldBlock11" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 26)
+
+[node name="OldBlock4" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 26)
+
+[node name="OldBlock5" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 24)
+
+[node name="OldBlock7" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 24)
+
+[node name="OldBlock8" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 20)
+
+[node name="OldBlock9" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 20)
+
+[node name="OldBlock6" parent="OldDimension" instance=ExtResource("5_vnqi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 24)
+
+[node name="CrumbleWall" parent="OldDimension" instance=ExtResource("5_pd6vm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97799, -1, 34.2128)
+
+[node name="CrumbleWall2" parent="OldDimension" instance=ExtResource("5_pd6vm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.953667, -1, 28.0095)
+
+[node name="CrumbleWall4" parent="OldDimension" instance=ExtResource("5_pd6vm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.19046, -1, 29.9543)
+
+[node name="CrumbleWall3" parent="OldDimension" instance=ExtResource("5_pd6vm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.97799, -1, 29.9543)
+
+[node name="CrumbleWall5" parent="OldDimension" instance=ExtResource("5_pd6vm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.97799, 1, 27.9543)
+
+[node name="CrumbleWall6" parent="OldDimension" instance=ExtResource("5_pd6vm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.05578, 1, 27.9543)
+
+[node name="OldWall_s_t2" parent="OldDimension" instance=ExtResource("7_p2hpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0719, -1.06806, 19.6815)
+
+[node name="OldWall_b_t" parent="OldDimension" instance=ExtResource("13_pyl5s")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.928103, -1.06806, 13.6815)
+
+[node name="NewDimension" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="NewWall_b" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.77964, 0, 18)
+
+[node name="NewWall_b2" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.03033, 0, 18)
+
+[node name="NewWall_b7" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.77964, 0, 12.0152)
+
+[node name="NewWall_b8" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.03033, 0, 12.0152)
+
+[node name="NewWall_b9" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.77964, 0, 6.0152)
+
+[node name="NewWall_b10" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.03033, 0, 6.0152)
+
+[node name="NewWall_b11" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.03265, 0, 6.0152)
+
+[node name="NewWall_b13" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.0326, 0, 6.0152)
+
+[node name="NewWall_b3" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.03033, 0, 24)
+
+[node name="NewWall_b12" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.03033, 0, 24)
+
+[node name="NewWall_b4" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.03033, 0, 30)
+
+[node name="NewWall_b5" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.75734, 0, 24)
+
+[node name="NewWall_b6" parent="NewDimension" instance=ExtResource("8_idn2x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.75734, 0, 30)
+
+[node name="NewWall_s_t" parent="NewDimension" instance=ExtResource("7_mu35u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17563, -0.344846, 24.2296)
+
+[node name="NewWall_s_t2" parent="NewDimension" instance=ExtResource("7_mu35u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1756, -0.344846, 24.2296)
+
+[node name="PersistedObjects" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="World" parent="PersistedObjects" instance=ExtResource("11_g7236")]
+
+[node name="Background" parent="PersistedObjects" instance=ExtResource("11_g7236")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0, -16)
+
+[node name="BackWall2" parent="PersistedObjects/Background" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17578, 2.89994, -6.51431)
+shape = SubResource("BoxShape3D_dxwtu")
+
+[node name="FogVolume" type="FogVolume" parent="PersistedObjects/Background"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.04228, 7.49013, 0.628407)
+size = Vector3(12.5706, 10.5475, 16.5034)
+material = SubResource("FogMaterial_fje56")
+
+[node name="Player" parent="." instance=ExtResource("12_dpl26")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1066, 1.67481, 30.5019)
+
+[node name="Pickups" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="Pickup3" parent="Pickups" instance=ExtResource("13_no7lf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.697, 5.98075, 27.72)
+metadata/_edit_group_ = true
+
+[node name="Pickup4" parent="Pickups" instance=ExtResource("13_no7lf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19311, 1.81966, 30.2595)
+metadata/_edit_group_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.117572, 0.993064, 0, -0.993064, -0.117572, 0, 31.2664, 13.0736)
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 180.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("17_4vv1w")]
+process_mode = 3
+visible = false
+
+[node name="LevelEnd" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44769, 4.42047, -8.2713)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0626526, 1.43906, 0.0904846)
+shape = SubResource("BoxShape3D_25v2g")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Pause/Resume" to="." method="unpause"]
+[connection signal="pressed" from="CanvasLayer/Pause/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/MainMenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="body_entered" from="LevelEnd" to="." method="_on_level_end_body_entered"]
+
+[editable path="PersistedObjects/Background"]
+[editable path="CanvasLayer/Pause"]
